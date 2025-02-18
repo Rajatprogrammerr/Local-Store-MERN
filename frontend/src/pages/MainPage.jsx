@@ -28,7 +28,7 @@ const MainPage = () => {
 
     return (
         <>
-            <div className="flex flex-wrap justify-center items-center gap-4 px-4 md:px-8 mt-24 mb-14">
+            <div className="flex flex-wrap justify-center items-center gap-4 px-14 md:px-8 mt-24 mb-14">
                 {Array.isArray(products) && products.length === 0 && (
                     <div className="text-center">
                         <span className="text-white block">No products available</span>
