@@ -21,10 +21,9 @@ function App() {
         <Route path="/update/:id" element={<UpdatePage />} />
 
       </Routes>
-      <div className=" fixed z-10 bottom-0 w-full ">
+      
         
-      <Footer />
-      </div>
+      {/* <Footer /> */}
     
       <Toaster />
     </>

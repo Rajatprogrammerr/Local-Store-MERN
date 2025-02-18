@@ -24,29 +24,41 @@ const CreatePage = () => {
 
     return (
         <>
-            <div className="flex justify-center items-center h-screen">
-                <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center gap-5">
-                    <input type="text"
+            <div className="flex justify-center items-center h-screen p-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-5 items-center w-full">
+                    <input
+                        type="text"
                         name="name"
                         value={product.name}
                         placeholder="Product Name"
                         onChange={(e) => setProduct({ ...product, name: e.target.value })}
-                        className="p-4 rounded-lg border-2 border-green-500 md:w-[500px] w-[300px] bg-black" />
-                    <input type="number"
+                        className="p-4 rounded-lg border-2 border-green-500 bg-black w-full max-w-[500px] text-white"
+                    />
+                    <input
+                        type="number"
                         name="price"
                         value={product.price}
                         placeholder="Product Price"
                         onChange={(e) => setProduct({ ...product, price: e.target.value })}
-                        className="p-4 rounded-lg border-2 border-green-500 md:w-[500px] w-[300px] bg-black" />
-                    <input name="image"
+                        className="p-4 rounded-lg border-2 border-green-500 bg-black w-full max-w-[500px] text-white"
+                    />
+                    <input
+                        type="text"
+                        name="image"
                         value={product.image}
                         placeholder="Product Image URL"
                         onChange={(e) => setProduct({ ...product, image: e.target.value })}
-                        className="p-4 rounded-lg border-2 border-green-500 md:w-[500px] w-[300px] bg-black" />
-
-                    <button className="bg-green-700 font-bold p-3 text-lg hover:bg-green-800 w-[200px] rounded-md">Create Product</button>
+                        className="p-4 rounded-lg border-2 border-green-500 bg-black w-full max-w-[500px] text-white"
+                    />
+                    <button
+                        type="submit"
+                        className="bg-green-700 font-bold p-3 text-lg hover:bg-green-800 w-full max-w-[200px] rounded-md"
+                    >
+                        Create Product
+                    </button>
                 </form>
             </div>
+
         </>
     )
 }

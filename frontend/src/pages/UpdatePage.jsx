@@ -73,7 +73,7 @@ const UpdateProduct = () => {
   const [product, setProduct] = useState({ name: "", price: "", image: "" });
   const { id } = useParams()
   useEffect(() => {
-    
+
     products.map((product) => {
 
       if (product._id === id) {
@@ -102,54 +102,62 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div className="min-h-[50vh] md:w-[80vw] sm:w-[50vw] lg:w-[50vw] mx-auto bg-gray-900 rounded-lg mt-36 mb-14 ">
-      <div className="flex flex-col justify-center items-center relative ">
+    <div className="min-h-[50vh] w-full max-w-[600px] mx-auto bg-gray-900 rounded-lg mt-36 mb-14 p-4">
+      <div className="flex flex-col justify-center items-center relative">
         <h1 className="font-bold text-3xl text-emerald-600 my-4">Update Product</h1>
-        <X className="size-10 cursor-pointer absolute top-4 right-4" onClick={() => window.history.back()} />
-        <form onSubmit={handleUpdate} className="flex flex-col gap-2 space-y-8 justify-center items-center">
-          <div className="flex flex-col">
-            <label className="font-bold relative">Name</label>
+        <X
+          className="w-8 h-8 cursor-pointer absolute top-4 right-4"
+          onClick={() => window.history.back()}
+        />
+        <form
+          onSubmit={handleUpdate}
+          className="flex flex-col gap-6 justify-center items-center w-full"
+        >
+          <div className="flex flex-col w-full">
+            <label className="font-bold mb-1">Name</label>
             <input
               type="text"
               name="name"
               value={product.name}
               placeholder="New Name"
               onChange={handleChange}
-              className="p-3 rounded-lg border-2 border-green-500 md:w-[500px] w-[300px] bg-black "
+              className="p-3 rounded-lg border-2 border-green-500 bg-black w-full max-w-[500px] text-white"
             />
           </div>
-          <div className="flex flex-col">
-            <label className="font-bold">Price</label>
+          <div className="flex flex-col w-full">
+            <label className="font-bold mb-1">Price</label>
             <input
               type="number"
               name="price"
               value={product.price}
               placeholder="New Price"
               onChange={handleChange}
-              className="p-3 rounded-lg border-2 border-green-500 md:w-[500px] w-[300px] bg-black"
+              className="p-3 rounded-lg border-2 border-green-500 bg-black w-full max-w-[500px] text-white"
             />
           </div>
-          <div className="flex flex-col">
-            <label className="font-bold">Image</label>
+          <div className="flex flex-col w-full">
+            <label className="font-bold mb-1">Image</label>
             <input
               type="text"
               name="image"
               value={product.image}
               placeholder="New Image URL"
               onChange={handleChange}
-              className="p-3 rounded-lg border-2 border-green-500 md:w-[500px] w-[300px] bg-black"
+              className="p-3 rounded-lg border-2 border-green-500 bg-black w-full max-w-[500px] text-white"
             />
           </div>
-          <div className="flex justify-center items-center">
-            <button type="submit" className="font-bold rounded-lg border-2 border-green-500 w-[200px] bg-green-600 p-4 my-6">
+          <div className="flex justify-center items-center w-full">
+            <button
+              type="submit"
+              className="font-bold rounded-lg border-2 border-green-500 bg-green-600 p-4 my-6 w-full max-w-xs"
+            >
               Update
             </button>
           </div>
-
-
         </form>
       </div>
     </div>
+
   );
 };
 
